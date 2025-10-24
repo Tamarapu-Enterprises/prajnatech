@@ -990,12 +990,15 @@
             observer.observe(el);
         });
 
-        // Add parallax effect to hero
+        // Remove the parallax effect completely or apply it only when not at top
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const hero = document.querySelector('.hero');
-            if (hero) {
+            if (hero && scrolled > window.innerHeight) {
+                // Only apply parallax after scrolling past the hero
                 hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            } else if (hero) {
+                hero.style.transform = 'translateY(0)';
             }
         });
     </script>
