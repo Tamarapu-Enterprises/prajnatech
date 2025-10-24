@@ -171,14 +171,23 @@
             z-index: 1;
         }
 
-        .hero-content img {
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.5));
-            transition: transform 0.4s ease, filter 0.4s ease;
+        .hero-header {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem; /* spacing between image and text */
+          margin-bottom: 1rem;
+          animation: fadeInUp 1s ease;
         }
         
-        .hero-content img:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 0 20px rgba(255,255,255,0.7));
+        .hero-logo {
+          height: 80px;
+          width: auto;
+          transition: transform 0.3s ease;
+        }
+        
+        .hero-logo:hover {
+          transform: scale(1.05);
         }
 
         .hero h1 {
@@ -734,8 +743,10 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <img src="tp_logo.png" alt="Tamarapu PrajnaTech Logo" style="height:100px; width:auto; margin-bottom:1rem; animation: fadeInUp 1s ease;">
-            <h1>Tamarapu PrajnaTech (TPT)</h1>
+            <div class="hero-header">
+              <img src="tp_logo.png" alt="Tamarapu PrajnaTech Logo" class="hero-logo">
+              <h1>Tamarapu PrajnaTech (TPT)</h1>
+            </div>
             <p class="tagline">AI Powered Software Development & Tech Solutions</p>
             <p class="subtitle">Budget-Friendly Excellence • No Compromise on Features or Security</p>
             <p class="ai-human-tag">🤖 AI-Powered Speed + 🧠 Human-Driven Creativity & Testing</p>
